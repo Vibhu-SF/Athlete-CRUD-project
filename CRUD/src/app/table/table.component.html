@@ -1,0 +1,34 @@
+<table id="main_table">
+    <thead>
+        <th name="id">Athlete_ID</th>
+        <th name="name">Athlete name</th>
+        <th name="age">Age</th>
+        <th name="gender">Gender</th>
+        <th name="sport">Sport</th>
+        <th name="awards">Awards</th>
+    </thead>
+    <tbody >
+        <tr *ngFor="let user of all_Users">
+            <td>{{user.athlete_id}}</td>
+            <td> {{user.athleteName}} </td>
+            <td> {{user.age}} </td>
+            <td> {{user.gender}} </td>
+            <td> {{user.sport}} </td>
+            <td (click)="showAward(user.awards)"> <div  class="awards"> {{awards(user.awards)}}</div> </td>
+            <td>
+                <button mat-raised-button color="primary" id="edit_btn" (click)="enable_update(user.athlete_id)">Edit</button>
+                <button mat-raised-button color="warn" id="delete_btn" (click)="delete_user(user.athlete_id)" >Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button mat-raised-button color = "primary" id="add_row_btn" (click)="enable_form()">Add Row</button>
+<app-form *ngIf="add_row" [update_check]="edit_contact" (parent_function)="parent_function($event)" (load_data_in_app)="load_data_from_form($event)"></app-form>
+<app-edit-form [update_check]="edit_contact" [user_Details]="user_Details" *ngIf="update_row" (parent_function)="parent_function($event)" (load_data_in_app)="load_data_from_form($event)" ></app-edit-form>
+<div class="popup" *ngIf="awardShow">
+    <ng-container *ngFor="let award of awardList">
+        <div>{{award}}</div>
+    </ng-container>
+
+    <button mat-raised-button color="primary" id="edit_btn" (click)="awardShow=false">CLOSE</button>
+</div>

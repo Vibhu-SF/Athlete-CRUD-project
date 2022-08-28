@@ -1,0 +1,44 @@
+table{
+    width: 70vw;
+    border: solid black;
+    border-left: solid grey;
+    background-color: rgb(219, 255, 244);
+    margin-left:auto;margin-right:auto
+}
+tr{
+    border-bottom:solid black ;
+}
+td{ 
+    text-align: center;
+    padding: 1vh;
+    border-bottom: solid grey;
+}
+button{
+    margin-left: 1vw;
+}
+#add_row_btn{
+    position: absolute;
+    left: 45vw;
+    margin-top: 1vh;
+}
+.awards{
+    cursor: pointer;
+    padding: 2px;
+    border: 1px solid #000;
+}
+
+.popup{
+    position: fixed;
+    left: 50%;
+    top:  30%;
+    font-size: 18px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    transform: translate(-50%, 0);
+}

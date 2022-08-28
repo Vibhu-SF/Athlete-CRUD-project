@@ -1,0 +1,19 @@
+<div id="main_div">
+<form [formGroup]="user_details" (ngSubmit)="table_data(user_details.value)">
+    <label for="firstName">Athlete Name</label>
+        <input type="text" placeholder="Enter athlete Name" formControlName="athleteName" class="input-field" id="firstname_inp" >
+        <!-- <span *ngIf="athleteName && athleteName.invalid && athleteName.touched"> required</span> -->
+        <label for="middle_namr">gender</label>
+        <input type="text" placeholder="Enter your gender" formControlName="gender" class="input-field" id="middle_name_inp">
+        <label for="lastname">dob</label>
+        <input type="date" placeholder="Enter dob" formControlName="dob" class="input-field" id="lastname_inp"> 
+        <label for="address">Awards</label>
+        <ng-select [items]="awardList" [multiple]="true" [closeOnSelect]="true" formControlName="awards" id="awards"></ng-select>
+        <label for="address">Sport</label>
+        <input type="text" formControlName="sport" placeholder="Enter sport" class="input-field" id="address_inp">
+        <!-- <span *ngIf="sport && sport.invalid && sport.touched"> required</span> -->
+   <br> <button mat-flat-button id="form_btn"  >Submit</button> 
+   <button mat-flat-button id="close_form" (click)="close_form()">Cancel</button>
+</form>
+<br>
+</div>
